@@ -38,6 +38,7 @@ const PostsPage = () => {
 
 
     const handleAddPost = async () => {
+        setLoading(true)
         try {
             const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
                 method: 'POST',
@@ -52,13 +53,18 @@ const PostsPage = () => {
             });
 
             if (!response.ok) {
+                setLoading(false)
                 throw new Error('Network response was not ok');
             }
 
             const data = await response.json();
             setPosts([data, ...posts])
         } catch (error) {
+            setLoading(false)
             console.error('Error during post creation:', error);
+        }
+        finally {
+            setLoading(false)
         }
     };
 
