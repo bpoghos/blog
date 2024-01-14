@@ -1,0 +1,21 @@
+.post {
+    width: 80%;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 20px auto;
+}
+
+.post:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.post button {
+    margin: 20px 10px;
+}
+
+h1 {
+    margin: 10px 30px;
+}
