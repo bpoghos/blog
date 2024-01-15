@@ -12,8 +12,13 @@
     cursor: pointer;
 }
 
+.post input {
+    width: 80%;
+}
+
 .post button {
     margin: 20px 10px;
+    cursor: pointer;
 }
 
 h1 {

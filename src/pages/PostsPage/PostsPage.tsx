@@ -42,12 +42,10 @@ const PostsPage = () => {
         try {
             const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     title,
-                    body: 'Your Body',
+                    body: 'string',
                     userId: 1
                 }),
             });
@@ -59,9 +57,9 @@ const PostsPage = () => {
 
             const data = await response.json();
             setPosts([data, ...posts])
+            setTitle('')
         } catch (error) {
-            setLoading(false)
-            console.error('Error during post creation:', error);
+            setError(`Error: ${error}, `)
         }
         finally {
             setLoading(false)
